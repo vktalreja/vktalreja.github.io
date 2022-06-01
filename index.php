@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/images/profile-1.jpeg" type="image/x-icon">
+    <link href="images/vishal.jpg" rel="icon" />
     <title>VKTalreja Team</title>
 
     <link rel="stylesheet" href="style.css">
@@ -15,7 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="scroll-up-btn">
@@ -44,12 +44,62 @@
             <div class="home-content">
                 <div class="text-1">Hello, my name is</div>
                 <div class="text-2">Vishal Kumar</div>
-                <div class="text-3">And I'm a <span class="typing"></span></div>
-                <a href="#">Hire me</a>
+                <div class="text-3">And I'm a <span class="typing">Web Developer</span></div>
+                <a href="https://www.fiverr.com/users/vishaltalreja01" target="_blank">Hire me</a>
             </div>
         </div>
     </section>
-
+    <div class="sidebar">
+        <div class="box1">
+            <div class="text1">
+                Facebook
+            </div>
+            <div class="icon">
+                <a href="https://www.facebook.com/vishaltalreja01" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="text1">
+                Twitter
+            </div>
+            <div class="icon">
+                <a href="https://www.twitter.com/VishalT79723224" target="_blank"> <i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="text1">
+                Instagram
+            </div>
+            <div class="icon">
+                <a href="https://www.instagram.com/vishaltalreja01" target="_blank" > <i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="text1">
+                Linkedin
+            </div>
+            <div class="icon">
+                <a href="https://www.linkedin.com/in/vishalktalreja01" target="_blank"> <i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="text1">
+                YouTube
+            </div>
+            <div class="icon">
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="text1">
+                Dribbble
+            </div>
+            <div class="icon">
+                <i class="fab fa-dribbble"></i>
+            </div>
+        </div>
+    </div>
+    
     <!-- about section start -->
     <section class="about" id="about">
         <div class="max-width">
@@ -60,8 +110,8 @@
                 </div>
                 <div class="column right">
                     <div class="text">I'm Vishal Kumar and I'm a <span class="typing-2"></span></div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ut voluptatum eveniet doloremque autem excepturi eaque, sit laboriosam voluptatem nisi delectus. Facere explicabo hic minus accusamus alias fuga nihil dolorum quae. Explicabo illo unde, odio consequatur ipsam possimus veritatis, placeat, ab molestiae velit inventore exercitationem consequuntur blanditiis omnis beatae. Dolor iste excepturi ratione soluta quas culpa voluptatum repudiandae harum non.</p>
-                    <a href="#">Download CV</a>
+                    <p>Myself Vishal. A Efficient Front-end Web Developer and WordPress Developer with 2 years of experience. I have developed almost 20+ responsive websites for startup companies and small businesses. And I am seeking opportunities to build amazing & responsive websites for you or your business. My Expertise lies in Responsive Website Development with PSD to HTML | HTML 5 | CSS3 | Bootstrap | WordPress | HTML to WordPress | PSD to WordPress | React JS. I prefer to provide the Quality and Guaranteed work, Rather than do a rush job.</p>
+                    <a class="btn" href="CV.pdf"><i class="fa fa-download"></i>Download CV</a>
                 </div>
             </div>
         </div>
@@ -177,9 +227,9 @@
                 </div>
                 <!-- <div class="card">
                     <div class="box">
-                        <img src="images/profile-4.jpeg" alt="">
-                        <div class="text">Someone name</div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <img src="images/vinod.jpg" alt="">
+                        <div class="text">Vinod Kumar</div>
+                        <p>Digital Artist</p>
                     </div>
                 </div>
                 <div class="card">
@@ -193,6 +243,7 @@
         </div>
     </section>
 
+
     <!-- contact section start -->
     <section class="contact" id="contact">
         <div class="max-width">
@@ -200,7 +251,7 @@
             <div class="contact-content">
                 <div class="column left">
                     <div class="text">Get in Touch</div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos harum corporis fuga corrupti. Doloribus quis soluta nesciunt veritatis vitae nobis?</p>
+                    <p>For any questions or feedback please feel free to contact us using the form below, or email us at <a href="mailto:vishal.kumar25913@gmail.com">vishal.kumar25913@gmail.com</a></p>
                     <div class="icons">
                         <div class="row">
                             <i class="fas fa-user"></i>
@@ -225,22 +276,46 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="column right">
+
+                <?php
+                if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+                    $Name = $_POST['Name'];
+                    $Email = $_POST['Email'];
+                    $Subject = $_POST['Subject'];
+                    $Msg = $_POST['Msg'];
+
+                $conn = mysqli_connect('localhost', '382928', 'sampSAMP123', '382928') or die("Connection Failed");
+                $newMsg = "INSERT INTO `messages`(`Names`, `Email`, `Subject`, `Message`) VALUES ('$Name','$Email','$Subject','$Msg')";
+
+                if (mysqli_query($conn,$newMsg)){
+                    echo '
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong> Thank You '.$Name.' we will get back to you </strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                    </div>';
+                }
+            }
+                ?>
+
                     <div class="text">Message me</div>
-                    <form action="#">
+                    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" enctype="multipart/form-data">
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" placeholder="Name" required>
+                                <input type="text" placeholder="Name" name="Name" required>
                             </div>
                             <div class="field email">
-                                <input type="email" placeholder="Email" required>
+                                <input type="email" placeholder="Email" name="Email" required>
                             </div>
                         </div>
                         <div class="field">
-                            <input type="text" placeholder="Subject" required>
+                            <input type="text" placeholder="Subject" name="Subject" required>
                         </div>
                         <div class="field textarea">
-                            <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+                            <textarea cols="30" rows="10" placeholder="Message.." name="Msg" required></textarea>
                         </div>
                         <div class="button-area">
                             <button type="submit">Send message</button>
@@ -256,6 +331,11 @@
         <span><span class="far fa-copyright"></span> 2022 <a href="https://www.facebook.com/vishaltalreja01">VKTalreja</a> |  All rights reserved.</span>
     </footer>
 
+    
     <script src="script.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+
+    
 </body>
 </html>

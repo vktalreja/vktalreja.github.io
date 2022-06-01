@@ -240,7 +240,7 @@ section .title::after{
 .about .about-content .right p{
     text-align: justify;
 }
-.about .about-content .right a{
+.about .about-content .right .btn{
     display: inline-block;
     background: crimson;
     color: #fff;
@@ -252,6 +252,7 @@ section .title::after{
     border: 2px solid crimson;
     transition: all 0.3s ease;
 }
+
 .about .about-content .right a:hover{
     color: crimson;
     background: none;
@@ -536,6 +537,42 @@ section .title::after{
   color: crimson;
   background: none;
 }
+
+.bg-opacity-25 {
+    --bs-bg-opacity: 0.25;
+}
+
+.bg-success {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-success-rgb),var(--bs-bg-opacity))!important;
+}
+
+.text-dark {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-dark-rgb),var(--bs-text-opacity))!important;
+}
+
+.p-2 {
+    padding: .5rem!important;
+}
+
+.alert-warning {
+    --bs-alert-color: #664d03;
+    --bs-alert-bg: #fff3cd;
+    --bs-alert-border-color: #ffecb5;
+}
+
+
+.alert{
+    color: #664d03;
+    background-color: aquamarine;
+    padding-left: 10px;
+    border-radius: 5px;
+    /* display: none; */
+}
+
+
+
 /* footer section styling */
 footer{
     background: #111;
@@ -628,6 +665,10 @@ footer span a:hover{
         width: 100%;
         margin-bottom: 35px;
     }
+
+    .sidebar{
+        display: none;
+    }
 }
 
 @media (max-width: 690px) {
@@ -677,4 +718,67 @@ footer span a:hover{
         font-size: 23px;
         line-height: 38px;
     }
+}
+
+/*Sidebar*/
+
+.sidebar
+{
+    position: absolute;
+    height: 340px;
+    width: 60px;
+    background-color: #fff;
+    border-radius: 10px;
+    top: 30%;
+    right: 30px;
+    transform: translate(-50%);
+    text-align: center;
+}
+
+.box1
+{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px auto;
+}
+
+.text1{
+    background-color: crimson;
+    height: 100%;
+    min-height: 0px;
+    margin-right: 5px;
+    line-height: 0;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 0 0 5px;
+    overflow: hidden;
+}
+
+.icon{
+    height: 100%;
+    min-width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.icon i{
+    color: crimson;
+    font-size: 18px;
+    line-height: 50px;
+}
+
+.box1:hover .icon {
+    background-color: crimson;
+}
+
+.box1:hover .icon i{
+    color: #fff;
+}
+
+.box1:hover .text1{
+    min-width: 120px;
 }
